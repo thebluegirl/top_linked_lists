@@ -10,11 +10,19 @@ class LinkedList
   end
 
   def prepend(value)
-    @head = Node.new(value)
+    if self.head != nil
+      next_node = self.head
+      @head = Node.new(value)
+      @head.next_node = next_node
+      return @head
+    else
+      return @head = Node.new(value)
+    end
   end
 end
 
 class Node
+  attr_accessor :next_node
   def initialize(value=nil)
     @value = value
     @next_node = nil
