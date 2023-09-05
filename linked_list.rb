@@ -1,6 +1,12 @@
 class LinkedList
+  attr_accessor :head, :tail
   def initialize
-      
+    @head = nil
+    @tail = nil
+  end
+
+  def append(value)
+    @tail = Node.new(value)
   end
 end
 
