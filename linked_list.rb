@@ -53,9 +53,21 @@ class LinkedList
     @size -= 1
     return return_value
   end
+
+  def contains?(value)
+    indexed_size = @size - 1
+    while indexed_size >= 0
+      if value == self.at(indexed_size).value
+        return true
+      end
+      indexed_size -= 1
+    end
+    return false
+  end
 end
 
 class Node
+  attr_reader :value
   attr_accessor :next_node
   def initialize(value=nil)
     @value = value
