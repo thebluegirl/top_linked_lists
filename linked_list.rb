@@ -14,6 +14,11 @@ class LinkedList
     else
       @tail = Node.new(value)
     end
+
+    if @size == 1
+      @head = @tail
+    end
+    return @tail
   end
 
   def prepend(value)
@@ -30,6 +35,15 @@ class LinkedList
       @tail = @head
     end
     return @head
+  end
+
+  def at(index)
+    return_value = self.head
+    until index == 0
+      return_value = return_value.next_node
+      index -= 1
+    end
+    return return_value
   end
 end
 
