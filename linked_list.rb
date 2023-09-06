@@ -45,6 +45,14 @@ class LinkedList
     end
     return return_value
   end
+
+  def pop
+    return_value = @tail
+    @tail = self.at(size-2)
+    @tail.next_node = nil
+    @size -= 1
+    return return_value
+  end
 end
 
 class Node
