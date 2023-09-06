@@ -6,7 +6,12 @@ class LinkedList
   end
 
   def append(value)
-    @tail = Node.new(value)
+    if self.tail != nil
+      self.tail.next_node = value
+      @tail = value
+    else
+      @tail = Node.new(value)
+    end
   end
 
   def prepend(value)
