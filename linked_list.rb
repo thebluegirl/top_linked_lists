@@ -9,8 +9,8 @@ class LinkedList
   def append(value)
     @size += 1
     if self.tail != nil
-      self.tail.next_node = value
-      @tail = value
+      @tail.next_node = Node.new(value)
+      @tail = @tail.next_node
     else
       @tail = Node.new(value)
     end
@@ -22,10 +22,14 @@ class LinkedList
       next_node = self.head
       @head = Node.new(value)
       @head.next_node = next_node
-      return @head
     else
-      return @head = Node.new(value)
+      @head = Node.new(value)
     end
+
+    if @size == 1
+      @tail = @head
+    end
+    return @head
   end
 end
 
