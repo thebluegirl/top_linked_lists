@@ -88,11 +88,11 @@ class LinkedList
   end
 
   def insert_at(value, index)
-    inserted_value = Node.new(value)
-    inserted_value.next_node = self.at(index)
-    self.at(index - 1).next_node = inserted_value
+    inserted_node = Node.new(value)
+    inserted_node.next_node = self.at(index)
+    self.at(index - 1).next_node = inserted_node
     @size += 1
-    return inserted_value
+    return inserted_node
   end
 
   def remove_at(index)
