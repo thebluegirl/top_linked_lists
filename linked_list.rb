@@ -64,6 +64,17 @@ class LinkedList
     end
     return false
   end
+
+  def find(value)
+    index = 0
+    location = self.head
+    while index < @size
+      return index if location.value == value
+      location = location.next_node
+      index += 1
+    end
+    return nil
+  end
 end
 
 class Node
