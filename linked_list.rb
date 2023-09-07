@@ -75,6 +75,17 @@ class LinkedList
     end
     return nil
   end
+
+  def to_s
+    string_rep = ""
+    location = self.head
+    until location.nil?
+      string_rep << "( #{location.value} ) -> "
+      location = location.next_node
+    end
+    string_rep << "nil"
+    return string_rep
+  end
 end
 
 class Node
