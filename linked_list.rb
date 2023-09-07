@@ -86,6 +86,12 @@ class LinkedList
     string_rep << "nil"
     return string_rep
   end
+
+  def insert_at(value, index)
+    inserted_value = Node.new(value)
+    inserted_value.next_node = self.at(index)
+    self.at(index - 1).next_node = inserted_value
+  end
 end
 
 class Node
